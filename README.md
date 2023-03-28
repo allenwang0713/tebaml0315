@@ -1,7 +1,7 @@
 # tebaml0315
 ML Trainning
 # 物件導向
-```
+```python
 # https://docs.python.org/3/reference/datamodel.html
 
 class Point:
@@ -68,7 +68,7 @@ p1 > p2
 sorted([p1, p2]
 ```
 # 瞎聊遞迴
-```
+```python
 # 1~10
 total = 0
 for i in range(10):
@@ -118,10 +118,79 @@ for i in range(2, len(l)):
 print(prev1)
 ```
 # zip/enumerate/*
-```
+```python
 l = ["a", "b", "c"]
 e = list(enumerate(l))
 list(zip([1, 2, 3], [4, 5, 6], [7, 8, 9]))
 # (0, 1, 2), ("a", "b", "c")
 list(zip(*e))
+```
+# 一氣呵成創建
+```python
+# list
+[i ** 2 for i in range(10)]
+# set
+{abs(i) for i in range(-10, 10)}
+```
+# 函式是種型態
+```python
+# 型態 + 操作
+# list + [0]
+# print + (3)
+b = 3
+b = int
+b(4.2)
+def t(digit=0):
+    if digit == 0:
+        return int
+    else:
+        return round
+t(0)(4.6)
+
+# 物件導向也是一樣的道理
+class Person:
+    pass
+class SuperPerson:
+    pass
+
+def t(cond):
+    if cond is True:
+        return Person
+    else:
+        return SuperPerson
+type(t(False)())
+```
+# decorator基本(定義裝飾)
+```python
+def test(f):
+    print(f.__name__)
+    return f
+    
+@test
+def other():
+    return 3
+```
+# decorator進階(定義的時候裝飾一個wrap, 你之後每次執行其實就像在執行wrap function)
+```python
+from functools import wraps
+def test(f):
+    @wraps(f)
+    def wrapper(*args, **kwds):
+        print(f.__name__)
+        return f(*args, **kwds)
+    return wrapper
+
+# 跑的是
+# test(other) print(other.__name) return other
+@test
+def other():
+    return 3
+
+@test
+def another():
+    return 4
+
+print(other())
+print(other())
+print(another())
 ```
