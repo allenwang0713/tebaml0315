@@ -1,6 +1,7 @@
 # tebaml0315
 ML Trainning
 # 物件導向
+```
 # https://docs.python.org/3/reference/datamodel.html
 
 class Point:
@@ -65,9 +66,9 @@ p1 in [Point(3, 4), Point(5, 6)]
 p1 > p2
 
 sorted([p1, p2]
-
+```
 # 瞎聊遞迴
-///
+```
 # 1~10
 total = 0
 for i in range(10):
@@ -115,4 +116,12 @@ for i in range(2, len(l)):
     val = max(case1, case2)
     prev2, prev1 = prev1, val
 print(prev1)
-///
+```
+# zip/enumerate/*
+```
+l = ["a", "b", "c"]
+e = list(enumerate(l))
+list(zip([1, 2, 3], [4, 5, 6], [7, 8, 9]))
+# (0, 1, 2), ("a", "b", "c")
+list(zip(*e))
+```
