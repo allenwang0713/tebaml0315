@@ -1,5 +1,5 @@
 # tebaml0315
-ML Trainning
+
 # 物件導向
 ```python
 # https://docs.python.org/3/reference/datamodel.html
