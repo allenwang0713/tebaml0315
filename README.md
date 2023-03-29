@@ -32,15 +32,7 @@ class Point:
     def __eq__(self, other):
 
         return self.x == other.x and self.y == other.y
-# loc/iloc
-```python
-d = pd.DataFrame([
-    [1, 2],
-    [3, 4]
-], index=[0, 0])
-d.iloc[0]
-d.loc[0]
-```
+
 
 
 
@@ -210,4 +202,13 @@ d = pd.DataFrame([
     [5, 6]
 ])
 d[[True, False, True]]
+```
+# loc/iloc
+```python
+d = pd.DataFrame([
+    [1, 2],
+    [3, 4]
+], index=[0, 0])
+d.iloc[0]
+d.loc[0]
 ```
